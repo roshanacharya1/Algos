@@ -1,0 +1,42 @@
+import java.util.*;
+
+public class program9 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int number,fact=0;
+		System.out.println("Enter the number to be cheched \n");
+		number = sc.nextInt();
+		int digit = 0,O_num,sum=0;
+		O_num = number;
+		while(number!=0)
+		{
+			digit = number%10;
+			fact = factorial(digit);
+			sum = sum+fact;
+			number = number/10;
+		}
+		System.out.println("Sum = "+sum );
+		if(O_num == sum)
+		{
+			System.out.println("This number is a Strong number\n");
+		}
+		else
+		{
+			System.out.println("This is not a Strong number \n");
+		}
+		
+	}
+	public static int factorial(int digit){
+		int i,factorial = 1;
+		System.out.println("number recieved \n");//debug
+		for(i=1;i<=digit;i++)
+		{
+			factorial = factorial*i;
+			System.out.println("factorial = "+factorial);//debug
+		}
+		System.out.println("number sent \n");//debug
+		return factorial;
+	}
+}
