@@ -1,0 +1,35 @@
+import java.util.*;
+public class Program13 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[100];
+        for(int i=0;i<n;i++)
+        {
+            arr[i] = sc.nextInt();
+        }
+        sockMerchant(n,arr);
+    }
+	
+	public static int sockMerchant(int n, int c[]) {
+	    // Write your code here
+		Set<Integer> colors = new HashSet<>();
+	    int pairs = 0;
+
+	    for (int i = 0; i < n; i++) {
+	        int element = c[i];
+	        if (!colors.contains(element)) {
+	            colors.add(element);
+	        } else {
+	            pairs++;
+	            colors.remove(element);
+	        }
+	   
+	  }
+	    System.out.println(pairs);
+	    return 0;
+	}
+}
