@@ -1,0 +1,28 @@
+import java.util.*;
+import java.io.*;
+public class Stairs {
+
+	public static void main(String[] args) throws IOException {
+        Scanner sc = new Scanner(System.in);
+       int height = sc.nextInt();
+        int stairs = height - 1;
+        
+        for(int i=0;i<height;i++)
+        {
+            for(int j=0;j<height;j++)
+            {
+                if(j>=stairs)
+                {
+                    System.out.print("#");
+                }
+                else
+                {
+                    System.out.print(" ");
+                }
+            }
+            stairs-=1;
+            System.out.println( );
+        }       
+    }
+
+}
