@@ -1,0 +1,26 @@
+2) The factorial of a number N is defined as the product of all integers from 1 up to N. Factorial of 0 is defined to be 1. The number N is a nonnegative integer that will be passed to the program as the first command line parameter. Write a program to calculate the factorial of a non-negative integer N using recursive function.
+
+
+#include<stdio.h>
+int fact(int);
+//Recursive function to print factorial of a number.
+//factorial is i if input 'n' is either 0 or 1.
+int fact(int n)
+{
+if(n==1 || n==0)
+{ return 1; }
+else
+{ return(n*(fact(n-1))); }
+}
+
+
+int main()
+{ int n;
+//Initializing 1 value based on user input.
+printf("Enter the number:\n");
+fflush(stdout);
+scanf("%d",&n);
+//calling fact function and printing the factorial value.
+int d= fact(n);
+printf("The factorial of %d is %d\n",n,d);
+}
