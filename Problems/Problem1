@@ -1,0 +1,35 @@
+During an interview process, only applications of those candidates who score above cutoff marks are processed to the next round of interview. Example: There were 5 applications on a particular day and the scores were 45, 80, 95, 87, 30 respectively. the cuoff mark for selection is 75. List the selected applicants name for next round of interview.
+#include <stdio.h>
+typedef struct employee{
+char name[20];
+int marks;
+}emp;
+
+int main()
+{
+emp a[5];
+int i,j,cut;
+printf("\nEnter the cutoff\n");
+scanf("%d",&cut);
+printf("\n ------------------------------\n");
+
+for(i=0;i<5;i++){
+printf("Enter Name:");
+fflush(stdout);
+scanf("%s",a[i].name);
+printf("Enter Marks");
+fflush(stdout);
+scanf("%d",&a[i].marks);
+printf("\n ------------------------------\n");
+}
+for(i=0;i<5;i++){
+
+if(a[i].marks>=cut){
+
+printf("\nThe Students who are selected along with thier marks for the interview are:\n");
+printf("%s\t",a[i].name);
+
+printf("%d\n",a[i].marks);
+}}
+return 0;
+}
