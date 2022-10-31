@@ -1,0 +1,104 @@
+3) Develop a software to perform billing operation in department store. Store the inventories using structure.
+#include<stdio.h>
+
+#include<string.h>
+
+//Structure to define item name and price.
+
+typedef struct{
+
+  char name[20];
+
+   int price;
+
+}bill;
+
+int main()
+
+{
+
+//declaring an array of size 100.
+
+    bill a[100];
+
+    int count=0,n,dis=10,x;
+
+    int total=0;
+
+    float discount,tc=0;
+
+    //scanning name and price till user enters 1 to exit.
+
+    //The price is updated every time an item is added.
+
+    for(int i=0;i<100;i++)
+
+    {
+
+    printf("\nEnter the item name:");
+
+    fflush(stdout);
+
+    scanf("%s",a[i].name);
+
+    printf("\nEnter the price:");
+
+    fflush(stdout);
+
+    scanf("%d",&a[i].price);
+
+    total+=a[i].price;
+
+    count++;
+
+    printf("press 0 to add more items or 1 to exit and generate bill.\n");
+
+    fflush(stdout);
+
+    scanf("%d",&n);
+
+    if(n==1)
+
+    {
+
+     break;
+
+    }
+
+   }
+
+     //discount calculating
+
+  
+
+       discount=(total*dis)/100;
+
+       tc=total-discount;
+
+ 
+
+   //printing Item list and price
+
+   for(int i=0;i<count;i++)
+
+   {
+
+   printf("%d\t\t",(i+1));
+
+   printf("%s\t\t",a[i].name);
+
+   printf("%d\n",a[i].price);
+
+   }
+
+   //Printing total price
+
+   printf("the discount is %d percentage \n",dis);
+
+   printf("The total price is Rs. %d /-\n",total);
+
+   printf("Payable price is Rs. %f/-\n",tc);
+
+   printf("You saved Rs. %f/-\n ",discount);
+
+}
