@@ -1,0 +1,45 @@
+1)	Inside a microcontroller, it is necessary to perform the four important operations like bitwise AND, OR, EXOR and NOT. The user has to manually enter the value of arguments which remains same for all operations. Based on the user choice, the particular function output is expected. Instead of calling each and every function separately, use function pointers pointing to each function within the array. Note: Inputs should be hexadecimal numbers.
+
+#include<stdio.h>
+int Bitwise_AND(int num1,int num2);
+int Bitwise_OR(int num1, int num2);
+int Bitwise_XOR(int num1, int num2);
+int Bitwise_NOT(int num1, int num2);
+
+
+
+
+int main()
+{
+int num1,num2,user_choice,output;
+int (*fptr[4])(int, int);
+fptr[0]= Bitwise_AND;
+fptr[1]= Bitwise_OR;
+fptr[2]= Bitwise_XOR;
+fptr[3]=Bitwise_NOT;
+
+
+
+
+printf("enter the number\n");
+fflush(stdout);
+scanf("%x %x",&num1,&num2);
+printf("please select the choice :\n0. Bitwise AND\n1. Bitwise OR\n2. Bitwise XOR\n3. Bitwise_NOT\n");
+fflush(stdout);
+scanf("%d",&user_choice);
+output= fptr[user_choice](num1,num2);
+printf("%x\n",output);
+}
+
+
+
+
+
+int Bitwise_AND(int x,int y){return (x&y);
+}
+int Bitwise_OR(int x,int y){return (x|y);
+}
+int Bitwise_XOR(int x,int y){return (x^y);
+}
+int Bitwise_NOT(int x,int y){return (~x);
+}
