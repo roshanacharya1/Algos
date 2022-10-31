@@ -1,0 +1,46 @@
+3)Write a program to open a file named “Inventory” and store the data such as Item name, Number, price and quantity. Extend the program to read this data from the file “Inventory” and display the inventory table with the value of each item in the console.
+#include<stdio.h>
+//Declaring structure to store item, price and quantity.
+typedef struct{
+char name[20];
+char price[20];
+char quantity[20];
+}applicants;
+int main()
+{
+//declaring an array of size 1000.
+applicants a[1000];
+int count=0,n; //scanning name and price and quantity till user enters 0 to exit.
+for(int i=0;i<1000;i++)
+{ printf("\nEnter the item name:");
+fflush(stdout);
+scanf("%s",a[i].name);
+printf("\nEnter the price:");
+fflush(stdout); scanf("%s",a[i].price); printf("\nEnter the quantity:");
+fflush(stdout); scanf("%s",a[i].quantity); count++;
+printf("press 1 to add more items or 0 to exit and generate bill.\n");
+fflush(stdout); scanf("%d",&n); if(n==0) { break; } }
+//This creates a file named inventory.txt to write the entered values.
+FILE *f;
+f = fopen("C:\\Users\\uif42966\\Desktop\\Challenge\\Inventory.txt","w");
+if(f==NULL) { printf("Error\n!"); }
+else { for(int i=0;i<count;i++)
+{ fprintf(f,"%d",i+1);
+fprintf(f,"%s","\t\t");
+fputs(a[i].name,f);
+fprintf(f,"%s","\t\t");
+fputs(a[i].price,f);
+fprintf(f,"%s","\t\t");
+fputs(a[i].quantity,f);
+fprintf(f,"%s"," \n"); } } fclose(f); printf("Number\t\tItems\t\tPrice\t\tQuantity\n");
+//This prints the characters in text file on console.
+char *file_name = "C:\\Users\\uif42966\\Desktop\\Challenge\\Inventory.txt";
+FILE *k; char c;
+k = fopen(file_name,"r");
+while((c=fgetc(k))!=EOF)
+{ printf("%c",c);
+
+
+} fclose(k);
+}
+
