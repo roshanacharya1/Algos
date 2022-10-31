@@ -1,0 +1,122 @@
+2) Write a program to receive the English mark, maths mark and science mark of the students in the class and find the class pass percentage in each subject (Eg: English class Pass Percentage = Number of students passed in English/ Total number of students). Take pass mark as 50.
+#include <stdio.h>  
+
+typedef struct marks{
+
+    char name[20];
+
+    int english,maths,science;
+
+}marks;
+
+    
+
+int main()   
+
+{ 
+
+     marks a[3];
+
+     int i,j,pass=50;
+
+    static float e_count=0,m_count=0,s_count=0;
+
+    
+
+     for(i=0;i<3;i++){
+
+       
+
+         printf("Enter Name:");
+
+         scanf("%s",a[i].name);
+
+         printf("Enter marks in English:");
+
+         scanf("%d",&a[i].english);
+
+         printf("Enter marks in Science:");
+
+         scanf("%d",&a[i].science);
+
+         printf("Enter marks in Maths:");
+
+         scanf("%d",&a[i].maths);
+
+         printf("\n ------------------------------\n");
+
+     } printf("\nThe Students who have passed English are:\n");
+
+     
+
+     for(i=0;i<3;i++){
+
+        
+
+        if(a[i].english>=pass){
+
+     e_count+=1;
+
+         printf("%s\t",a[i].name);
+
+       
+
+         printf("%d\n",a[i].english);
+
+        }
+
+     }
+
+    
+
+     printf("\nThe Students who have passed Science are:\n");
+
+         for(i=0;i<3;i++){
+
+        
+
+        if(a[i].science>=pass){
+
+ s_count+=1;
+
+         printf("%s\t",a[i].name);
+
+       
+
+         printf("%d\n",a[i].science);
+
+        }
+
+         }
+
+         printf("\nThe Students who have passed Maths  are:\n");
+
+         for(i=0;i<3;i++){
+
+        
+
+        if(a[i].maths>=pass){
+
+        m_count+=1;
+
+         printf("%s\t",a[i].name);
+
+         printf("%d\n",a[i].maths);
+
+     }
+
+         }
+
+        
+
+     float eng_pass=(e_count/3)*100;
+
+    float math_pass=(m_count/3)*100;
+
+    float sci_pass=(s_count/3)*100;
+
+    printf("pass percentage of \n english= %f\n maths=%f\n science=%f\n ", eng_pass,math_pass,sci_pass);
+
+    return 0;   
+
+}
